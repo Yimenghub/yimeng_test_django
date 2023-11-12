@@ -11,8 +11,8 @@ pipeline {
 
       stage("Build") {
          steps {
-            echo "Building the Docker image"
             dir('test_project'){
+               echo "Building the Docker image"
                sh "docker build -t mydjango-python-app -f Dockerfile ."
             }
          }
