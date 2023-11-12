@@ -19,9 +19,9 @@ pipeline {
       stage("Push to Docker Hub") {
          steps {
             echo "Pushing the Docker image to Docker Hub"
-            withCredentials([usernamePassword(credentialsId: "dockerHub", passwordVariable: "12345678", usernameVariable: "yoejo")]) {
+            withCredentials([usernamePassword(credentialsId: "dockerHub", passwordVariable: "yimeng2000", usernameVariable: "yoejo")]) {
                sh "docker tag mydjango-python-app ${env.yoejo}/mydjango-python-app:latest"
-               sh "docker login -u ${env.yoejo} -p ${env.12345678}"
+               sh "docker login -u ${env.yoejo} -p ${env.yimeng2000}"
                sh "docker push ${env.yoejo}/mydjango-python-app:latest"
             }
          }
