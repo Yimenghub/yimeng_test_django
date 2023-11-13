@@ -11,13 +11,9 @@ pipeline {
 
       stage("Build") {
          steps {
-               script {
-                  echo 'Building Docker image'
-                  dir('test_project') {
-                     sh 'docker build -t mydjango-app .'
-                  }
-                }
-            }
+            echo "Building the Docker image"
+            sh "docker build -t mydjango-python-app ."
+         }
       }
 
       stage("Push to Docker Hub") {
